@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		020380D22176FE3C00891103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D12176FE3C00891103 /* AppDelegate.swift */; };
-		020380D42176FE3C00891103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D32176FE3C00891103 /* ViewController.swift */; };
+		020380D42176FE3C00891103 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D32176FE3C00891103 /* RootController.swift */; };
 		020380D72176FE3C00891103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020380D52176FE3C00891103 /* Main.storyboard */; };
 		020380D92176FE3D00891103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020380D82176FE3D00891103 /* Assets.xcassets */; };
 		020380DC2176FE3D00891103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020380DA2176FE3D00891103 /* LaunchScreen.storyboard */; };
 		020380E72176FE3D00891103 /* TMCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380E62176FE3D00891103 /* TMCategoryTests.swift */; };
 		020380F22176FE3D00891103 /* TMCategoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380F12176FE3D00891103 /* TMCategoryUITests.swift */; };
+		02038103217717CF00891103 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038102217717CF00891103 /* UIViewExtensions.swift */; };
+		0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203810621771CA100891103 /* CategoryTableViewCell.swift */; };
+		0203810921771DA200891103 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0203810821771DA200891103 /* CategoryTableViewCell.xib */; };
+		0203810C2177215000891103 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203810B2177215000891103 /* CategoryViewModel.swift */; };
+		0203811A2177242700891103 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381192177242700891103 /* UIFontExtensions.swift */; };
+		0203811B2177286200891103 /* TitilliumWeb-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038113217722A700891103 /* TitilliumWeb-Black.ttf */; };
+		0203811C2177286500891103 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038114217722A700891103 /* TitilliumWeb-Bold.ttf */; };
+		0203811D2177286700891103 /* TitilliumWeb-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038118217722A700891103 /* TitilliumWeb-BoldItalic.ttf */; };
+		0203811E2177286A00891103 /* TitilliumWeb-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810E217722A600891103 /* TitilliumWeb-ExtraLight.ttf */; };
+		0203811F2177286D00891103 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038112217722A700891103 /* TitilliumWeb-ExtraLightItalic.ttf */; };
+		020381202177287000891103 /* TitilliumWeb-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038117217722A700891103 /* TitilliumWeb-Italic.ttf */; };
+		020381212177287300891103 /* TitilliumWeb-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038115217722A700891103 /* TitilliumWeb-Light.ttf */; };
+		020381222177287700891103 /* TitilliumWeb-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038116217722A700891103 /* TitilliumWeb-LightItalic.ttf */; };
+		020381232177287900891103 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038110217722A600891103 /* TitilliumWeb-Regular.ttf */; };
+		020381242177287C00891103 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038111217722A700891103 /* TitilliumWeb-SemiBold.ttf */; };
+		020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +52,7 @@
 /* Begin PBXFileReference section */
 		020380CE2176FE3C00891103 /* TMCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		020380D12176FE3C00891103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		020380D32176FE3C00891103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		020380D32176FE3C00891103 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		020380D62176FE3C00891103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		020380D82176FE3D00891103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		020380DB2176FE3D00891103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +63,22 @@
 		020380ED2176FE3D00891103 /* TMCategoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMCategoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		020380F12176FE3D00891103 /* TMCategoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCategoryUITests.swift; sourceTree = "<group>"; };
 		020380F32176FE3D00891103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02038102217717CF00891103 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		0203810621771CA100891103 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		0203810821771DA200891103 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		0203810B2177215000891103 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		0203810E217722A600891103 /* TitilliumWeb-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-ExtraLight.ttf"; sourceTree = "<group>"; };
+		0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		02038110217722A600891103 /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
+		02038111217722A700891103 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
+		02038112217722A700891103 /* TitilliumWeb-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		02038113217722A700891103 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
+		02038114217722A700891103 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
+		02038115217722A700891103 /* TitilliumWeb-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Light.ttf"; sourceTree = "<group>"; };
+		02038116217722A700891103 /* TitilliumWeb-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-LightItalic.ttf"; sourceTree = "<group>"; };
+		02038117217722A700891103 /* TitilliumWeb-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Italic.ttf"; sourceTree = "<group>"; };
+		02038118217722A700891103 /* TitilliumWeb-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-BoldItalic.ttf"; sourceTree = "<group>"; };
+		020381192177242700891103 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +129,9 @@
 		020380D02176FE3C00891103 /* TMCategory */ = {
 			isa = PBXGroup;
 			children = (
-				020380D12176FE3C00891103 /* AppDelegate.swift */,
-				020380D32176FE3C00891103 /* ViewController.swift */,
+				02038100217710E800891103 /* Resources */,
+				020380FF217710D300891103 /* Classes */,
 				020380D52176FE3C00891103 /* Main.storyboard */,
-				020380D82176FE3D00891103 /* Assets.xcassets */,
 				020380DA2176FE3D00891103 /* LaunchScreen.storyboard */,
 				020380DD2176FE3D00891103 /* Info.plist */,
 			);
@@ -123,6 +154,79 @@
 				020380F32176FE3D00891103 /* Info.plist */,
 			);
 			path = TMCategoryUITests;
+			sourceTree = "<group>";
+		};
+		020380FF217710D300891103 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0203810A2177212A00891103 /* ViewModels */,
+				0203810521771BF000891103 /* Views */,
+				0203810421771BE400891103 /* ViewControllers */,
+				02038101217717B000891103 /* Extensions */,
+				020380D12176FE3C00891103 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		02038100217710E800891103 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0203810D2177228D00891103 /* Fonts */,
+				020380D82176FE3D00891103 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		02038101217717B000891103 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02038102217717CF00891103 /* UIViewExtensions.swift */,
+				020381192177242700891103 /* UIFontExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0203810421771BE400891103 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				020380D32176FE3C00891103 /* RootController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0203810521771BF000891103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0203810621771CA100891103 /* CategoryTableViewCell.swift */,
+				0203810821771DA200891103 /* CategoryTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0203810A2177212A00891103 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0203810B2177215000891103 /* CategoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0203810D2177228D00891103 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				02038113217722A700891103 /* TitilliumWeb-Black.ttf */,
+				02038114217722A700891103 /* TitilliumWeb-Bold.ttf */,
+				02038118217722A700891103 /* TitilliumWeb-BoldItalic.ttf */,
+				0203810E217722A600891103 /* TitilliumWeb-ExtraLight.ttf */,
+				02038112217722A700891103 /* TitilliumWeb-ExtraLightItalic.ttf */,
+				02038117217722A700891103 /* TitilliumWeb-Italic.ttf */,
+				02038115217722A700891103 /* TitilliumWeb-Light.ttf */,
+				02038116217722A700891103 /* TitilliumWeb-LightItalic.ttf */,
+				02038110217722A600891103 /* TitilliumWeb-Regular.ttf */,
+				02038111217722A700891103 /* TitilliumWeb-SemiBold.ttf */,
+				0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +333,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0203811C2177286500891103 /* TitilliumWeb-Bold.ttf in Resources */,
+				0203811B2177286200891103 /* TitilliumWeb-Black.ttf in Resources */,
 				020380DC2176FE3D00891103 /* LaunchScreen.storyboard in Resources */,
+				020381232177287900891103 /* TitilliumWeb-Regular.ttf in Resources */,
+				020381202177287000891103 /* TitilliumWeb-Italic.ttf in Resources */,
+				0203811E2177286A00891103 /* TitilliumWeb-ExtraLight.ttf in Resources */,
+				0203811D2177286700891103 /* TitilliumWeb-BoldItalic.ttf in Resources */,
 				020380D92176FE3D00891103 /* Assets.xcassets in Resources */,
+				020381242177287C00891103 /* TitilliumWeb-SemiBold.ttf in Resources */,
+				020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */,
 				020380D72176FE3C00891103 /* Main.storyboard in Resources */,
+				020381212177287300891103 /* TitilliumWeb-Light.ttf in Resources */,
+				0203811F2177286D00891103 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */,
+				020381222177287700891103 /* TitilliumWeb-LightItalic.ttf in Resources */,
+				0203810921771DA200891103 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +372,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020380D42176FE3C00891103 /* ViewController.swift in Sources */,
+				020380D42176FE3C00891103 /* RootController.swift in Sources */,
+				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
+				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
+				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
+				02038103217717CF00891103 /* UIViewExtensions.swift in Sources */,
 				020380D22176FE3C00891103 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -418,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
