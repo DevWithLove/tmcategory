@@ -37,6 +37,7 @@ class CategoryTableViewCell: UITableViewCell {
   
   // MARK: Layout
   private func setupViews() {
+    self.selectionStyle = UITableViewCell.SelectionStyle.none
     nameLabel.font = UIFont.TitilliumWeb.semiBold.withSize(14)
   }
 }

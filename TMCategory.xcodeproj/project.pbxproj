@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		020380D22176FE3C00891103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D12176FE3C00891103 /* AppDelegate.swift */; };
-		020380D42176FE3C00891103 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D32176FE3C00891103 /* RootController.swift */; };
+		020380D42176FE3C00891103 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020380D32176FE3C00891103 /* RootViewController.swift */; };
 		020380D72176FE3C00891103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020380D52176FE3C00891103 /* Main.storyboard */; };
 		020380D92176FE3D00891103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020380D82176FE3D00891103 /* Assets.xcassets */; };
 		020380DC2176FE3D00891103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020380DA2176FE3D00891103 /* LaunchScreen.storyboard */; };
@@ -30,6 +30,8 @@
 		020381232177287900891103 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038110217722A600891103 /* TitilliumWeb-Regular.ttf */; };
 		020381242177287C00891103 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038111217722A700891103 /* TitilliumWeb-SemiBold.ttf */; };
 		020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */; };
+		02038127217736AE00891103 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ItemsViewController.swift */; };
+		0203812A2177393100891103 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381292177393100891103 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,7 @@
 /* Begin PBXFileReference section */
 		020380CE2176FE3C00891103 /* TMCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		020380D12176FE3C00891103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		020380D32176FE3C00891103 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		020380D32176FE3C00891103 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		020380D62176FE3C00891103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		020380D82176FE3D00891103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		020380DB2176FE3D00891103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		02038117217722A700891103 /* TitilliumWeb-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Italic.ttf"; sourceTree = "<group>"; };
 		02038118217722A700891103 /* TitilliumWeb-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-BoldItalic.ttf"; sourceTree = "<group>"; };
 		020381192177242700891103 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		02038126217736AE00891103 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		020381292177393100891103 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		020380FF217710D300891103 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				020381282177391400891103 /* Models */,
 				0203810A2177212A00891103 /* ViewModels */,
 				0203810521771BF000891103 /* Views */,
 				0203810421771BE400891103 /* ViewControllers */,
@@ -189,7 +194,8 @@
 		0203810421771BE400891103 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				020380D32176FE3C00891103 /* RootController.swift */,
+				020380D32176FE3C00891103 /* RootViewController.swift */,
+				02038126217736AE00891103 /* ItemsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -227,6 +233,14 @@
 				0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		020381282177391400891103 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				020381292177393100891103 /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,12 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020380D42176FE3C00891103 /* RootController.swift in Sources */,
+				020380D42176FE3C00891103 /* RootViewController.swift in Sources */,
 				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
 				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
+				02038127217736AE00891103 /* ItemsViewController.swift in Sources */,
 				02038103217717CF00891103 /* UIViewExtensions.swift in Sources */,
 				020380D22176FE3C00891103 /* AppDelegate.swift in Sources */,
+				0203812A2177393100891103 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Ignore the Storyboard
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
-    window?.rootViewController = UINavigationController(rootViewController: RootController())
+    window?.rootViewController = UINavigationController(rootViewController: RootViewController())
     return true
   }
 

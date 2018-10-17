@@ -8,15 +8,15 @@
 
 import UIKit
 
-class RootController: UIViewController {
+class RootViewController: UIViewController {
 
   lazy var categoryTableView: UITableView = { [weak self] in
-    let tv = UITableView(frame: .zero)
-    tv.delegate = self
-    tv.dataSource = self
+    let tableView = UITableView(frame: .zero)
+    tableView.delegate = self
+    tableView.dataSource = self
     let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
-    tv.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
-    return tv
+    tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
+    return tableView
   }()
  
   var categoryDataSource: [String] = []
@@ -49,7 +49,7 @@ class RootController: UIViewController {
 }
 
 
-extension RootController: UITableViewDelegate, UITableViewDataSource {
+extension RootViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return categoryDataSource.count
@@ -60,6 +60,12 @@ extension RootController: UITableViewDelegate, UITableViewDataSource {
     let viewModel = CategoryViewModel(name: categoryDataSource[indexPath.row], icon: "I")
     cell.viewModel = viewModel
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let itemsViewController = ItemsViewController()
+    self.navigationController?.pushViewController(itemsViewController, animated: true)
+    print("selected : \(indexPath.row)")
   }
 }
 
