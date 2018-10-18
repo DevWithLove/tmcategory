@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 
 
 protocol CategoryRequestDelegate: class {
-  func requestSuccess(_ client: CategoryClient, result:[Category]?)
+  func requestSuccess(_ client: CategoryClient, result:Category?)
   func requestFailed(_ client: CategoryClient, errorResponse: Error)
 }
 
@@ -29,7 +29,7 @@ class CategoryClient: BaseClient {
     manager.request(Router.fetchCategory)
       .validate(statusCode: 200..<300)
       .validate(contentType: ["application/json"])
-      .responseArray{ [weak self] (response: DataResponse<[Category]>)  in
+      .responseObject{ [weak self] (response: DataResponse<Category>)  in
         guard let strongSelf = self else { return }
         
         switch response.result {

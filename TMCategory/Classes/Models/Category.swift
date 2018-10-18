@@ -28,3 +28,17 @@ struct Category: Mappable {
   }
   
 }
+
+extension Category {
+  
+  func toViewModel() -> CategoryViewModel? {
+    
+    guard let name = self.name,
+          let number = self.number else {
+        return nil
+    }
+    
+    let type = CategoryType(rawValue: String(number.dropLast())) ?? .unknown
+    return CategoryViewModel(name: name, type: type)
+  }
+}

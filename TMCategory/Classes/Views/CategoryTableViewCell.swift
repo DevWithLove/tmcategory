@@ -14,9 +14,9 @@ class CategoryTableViewCell: UITableViewCell {
   
   var viewModel: CategoryViewModel? {
     didSet {
-      guard let strongModel = viewModel else { return }
-      iconLabel.text = strongModel.icon
-      nameLabel.text = strongModel.name
+      guard let this = viewModel else { return }
+      iconLabel.text = this.type.icon
+      nameLabel.text = this.name + " " + this.type.rawValue
     }
   }
   
@@ -39,5 +39,6 @@ class CategoryTableViewCell: UITableViewCell {
   private func setupViews() {
     self.selectionStyle = UITableViewCell.SelectionStyle.none
     nameLabel.font = UIFont.TitilliumWeb.semiBold.withSize(14)
+    iconLabel.font = UIFont.Icon.regular.withSize(16)
   }
 }

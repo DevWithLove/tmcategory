@@ -19,7 +19,7 @@ class RootViewController: UIViewController {
     return tableView
   }()
  
-  var categoryDataSource: [String] = []
+  var categoryDataSource: [Category] = []
   
   lazy var categoryClient: CategoryClient = CategoryClient(delegate: self)
   
@@ -28,15 +28,20 @@ class RootViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    categoryDataSource = ["a","b","c"]
     categoryClient.fetch()
     setupViews()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  
   }
 
   
   // MARK: Layout
   
   private func setupViews(){
+    // TODO: Localization
     self.title = "Category"
     view.backgroundColor = UIColor.white
     view.addSubview(categoryTableView)
@@ -60,8 +65,7 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: indexPath) as! CategoryTableViewCell
-    let viewModel = CategoryViewModel(name: categoryDataSource[indexPath.row], icon: "I")
-    cell.viewModel = viewModel
+    cell.viewModel = categoryDataSource[indexPath.row].toViewModel()
     return cell
   }
   
@@ -73,14 +77,18 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension RootViewController: CategoryRequestDelegate {
-  func requestSuccess(_ client: CategoryClient, result: [Category]?) {
+  func requestSuccess(_ client: CategoryClient, result: Category?) {
     
+    if let categories = result?.subcategories {
+      categoryDataSource = categories
+    } else {
+      categoryDataSource = []
+    }
+    categoryTableView.reloadData()
   }
   
   func requestFailed(_ client: CategoryClient, errorResponse: Error) {
-    
+   
+    // TODO: Error handle
   }
-  
-  
 }
-

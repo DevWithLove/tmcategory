@@ -62,8 +62,8 @@ extension ItemsViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: indexPath) as! CategoryTableViewCell
-    let viewModel = CategoryViewModel(name: itemDataSource[indexPath.row], icon: "I")
-    cell.viewModel = viewModel
+  //  let viewModel = CategoryViewModel(name: itemDataSource[indexPath.row], number: "I")
+   // cell.viewModel = nil
     return cell
   }
   

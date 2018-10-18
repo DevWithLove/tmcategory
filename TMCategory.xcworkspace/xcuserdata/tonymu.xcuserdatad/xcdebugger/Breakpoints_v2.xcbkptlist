@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TMCategory/Classes/HttpClients/CategoryClient.swift"
-            timestampString = "561522040.0205179"
+            timestampString = "561541910.4802949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -25,136 +25,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TMCategory/Classes/HttpClients/CategoryClient.swift"
-            timestampString = "561522040.020861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "fetch()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TMCategory/Classes/HttpClients/CategoryClient.swift"
-            timestampString = "561522040.021103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "fetch()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TMCategory/Classes/HttpClients/CategoryClient.swift"
-            timestampString = "561522040.021284"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "fetch()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TMCategory/Classes/HttpClients/Router.swift"
-            timestampString = "561522040.021443"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "asURLRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TMCategory/Classes/HttpClients/Router.swift"
-            timestampString = "561522040.021646"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "path"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-            timestampString = "561522040.021816"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "ObjectMapperSerializer(_:mapToObject:context:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperSerializer&lt;A where A: ObjectMapper.BaseMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, mapToObject: Swift.Optional&lt;A&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;A&gt;"
-                  moduleName = "AlamofireObjectMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.470963"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "61">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URLRequest&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; Alamofire.Result&lt;A&gt; in static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperSerializer&lt;A where A: ObjectMapper.BaseMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, mapToObject: Swift.Optional&lt;A&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;A&gt;"
-                  moduleName = "AlamofireObjectMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.475638"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "434">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-            timestampString = "561522040.022559"
+            timestampString = "561534231.28273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -169,8 +41,8 @@
                   symbolName = "static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperImmutableSerializer&lt;A where A: ObjectMapper.ImmutableMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;A&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.480973"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.8240629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
@@ -184,8 +56,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.URLRequest&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; Alamofire.Result&lt;A&gt; in static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperImmutableSerializer&lt;A where A: ObjectMapper.ImmutableMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;A&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.4848109"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.826839"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "100"
@@ -202,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-            timestampString = "561522040.023078"
+            timestampString = "561534231.282768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -217,8 +89,8 @@
                   symbolName = "static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperImmutableArraySerializer&lt;A where A: ObjectMapper.ImmutableMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;Swift.Array&lt;A&gt;&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.4905159"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.830001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "160"
@@ -232,8 +104,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.URLRequest&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; Alamofire.Result&lt;Swift.Array&lt;A&gt;&gt; in static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperImmutableArraySerializer&lt;A where A: ObjectMapper.ImmutableMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;Swift.Array&lt;A&gt;&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.494199"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.832275"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -250,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-            timestampString = "561522040.023602"
+            timestampString = "561534231.282802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -265,8 +137,8 @@
                   symbolName = "static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperArraySerializer&lt;A where A: ObjectMapper.BaseMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;Swift.Array&lt;A&gt;&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.49933"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.836081"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
@@ -280,8 +152,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.URLRequest&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; Alamofire.Result&lt;Swift.Array&lt;A&gt;&gt; in static (extension in AlamofireObjectMapper):Alamofire.DataRequest.ObjectMapperArraySerializer&lt;A where A: ObjectMapper.BaseMappable&gt;(_: Swift.Optional&lt;Swift.String&gt;, context: Swift.Optional&lt;ObjectMapper.MapContext&gt;) -&gt; Alamofire.DataResponseSerializer&lt;Swift.Array&lt;A&gt;&gt;"
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tonymu/git/tmcategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561522040.5032181"
+                  urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
+                  timestampString = "561541910.8386379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "140"

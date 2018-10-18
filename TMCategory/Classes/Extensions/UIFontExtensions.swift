@@ -14,9 +14,9 @@ extension UIFont {
     return TitilliumWebFont()
   }
   
-//  static var Icon: IconFont {
-//    return IconFont()
-//  }
+  static var Icon: IconFont {
+    return IconFont()
+  }
 }
 
 
@@ -47,17 +47,17 @@ struct TitilliumWebFont: CustomFont {
   }
 }
 
-//struct IconFont: CustomFont {
-//
-//  var familyName: String
-//  var defaultSize: CGFloat
-//
-//  init() {
-//    familyName = "FontAwesome"
-//    defaultSize = 12
-//  }
-//
-//  var regular: UIFont {
-//    return UIFont(name: "\(familyName)", size: defaultSize)!
-//  }
-//}
+struct IconFont: CustomFont {
+
+  var familyName: String
+  var defaultSize: CGFloat
+
+  init() {
+    familyName = "FontAwesome"
+    defaultSize = 12
+  }
+
+  var regular: UIFont {
+    return UIFont(name: "\(familyName)", size: defaultSize)!
+  }
+}
