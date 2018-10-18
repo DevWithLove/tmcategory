@@ -7,9 +7,24 @@
 //
 
 import UIKit
+import ObjectMapper
 
-struct Category {
-  let name: String
-  let number: String
-  let path: String
+struct Category: Mappable {
+  
+  var name: String?
+  var number: String?
+  var path: String?
+  var subcategories: [Category]?
+  
+  init?(map: Map) {
+    
+  }
+  
+  mutating func mapping(map: Map) {
+    name <- map["Name"]
+    number <- map["Number"]
+    path <- map["Path"]
+    subcategories <- map["Subcategories"]
+  }
+  
 }

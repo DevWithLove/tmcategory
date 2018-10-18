@@ -1,0 +1,6 @@
+framework module Pods_TMCategory {
+  umbrella header "Pods-TMCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -21,6 +21,7 @@ class RootViewController: UIViewController {
  
   var categoryDataSource: [String] = []
   
+  lazy var categoryClient: CategoryClient = CategoryClient(delegate: self)
   
   // MARK: View Lifecycle
   
@@ -28,6 +29,7 @@ class RootViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     categoryDataSource = ["a","b","c"]
+    categoryClient.fetch()
     setupViews()
   }
 
@@ -36,12 +38,13 @@ class RootViewController: UIViewController {
   
   private func setupViews(){
     self.title = "Category"
+    view.backgroundColor = UIColor.white
     view.addSubview(categoryTableView)
     setViewConstraints()
   }
   
   private func setViewConstraints() {
-    _ = categoryTableView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+    _ = categoryTableView.anchor(view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
   }
   
   // MARK: Additional Helpers
@@ -67,5 +70,17 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
     self.navigationController?.pushViewController(itemsViewController, animated: true)
     print("selected : \(indexPath.row)")
   }
+}
+
+extension RootViewController: CategoryRequestDelegate {
+  func requestSuccess(_ client: CategoryClient, result: [Category]?) {
+    
+  }
+  
+  func requestFailed(_ client: CategoryClient, errorResponse: Error) {
+    
+  }
+  
+  
 }
 
