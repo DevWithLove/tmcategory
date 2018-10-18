@@ -11,7 +11,9 @@ import Alamofire
 
 enum Router: Alamofire.URLRequestConvertible {
   
-  static let baseUri = "https://api.tmsandbox.co.nz"
+  static let oauthHeaderKey = "Authorization"
+  
+  static var apiConfig: ApiConfig = SandBoxApiConfig()
   
   case fetchCategory
   
@@ -27,15 +29,16 @@ enum Router: Alamofire.URLRequestConvertible {
     
     switch self {
     case .fetchCategory:
-      return "/v1/Categories/0.json"
+      return "/\(Router.apiConfig.version)/Categories/0.json"
     }
   }
   
   func asURLRequest() throws -> URLRequest {
-    let url = Foundation.URL(string: Router.baseUri)!
+    let url = Foundation.URL(string: Router.apiConfig.base_uri)!
     var request = URLRequest(url: url.appendingPathComponent(path))
     
     request.httpMethod = method.rawValue
+    request.addValue(Router.apiConfig.oauthHeader, forHTTPHeaderField: Router.oauthHeaderKey)
     
     switch self {
     case .fetchCategory:
@@ -52,5 +55,14 @@ enum Router: Alamofire.URLRequestConvertible {
     return try URLEncoding.default.encode(request, with: parameters)
   }
   
+}
+
+fileprivate extension ApiConfig {
+  
+  var oauthHeader: String {
+    return """
+    OAuth oauth_consumer_key=\(self.oauth_consurmer_key),oauth_signature_method=\(self.oauth_signature_method),oauth_version=\(self.oauth_version),oauth_signature=\(self.oauth_signature)
+    """
+  }
   
 }

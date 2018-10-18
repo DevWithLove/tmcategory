@@ -42,7 +42,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.8240629"
+                  timestampString = "561546499.810763"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
@@ -57,7 +57,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.826839"
+                  timestampString = "561546499.812914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "100"
@@ -90,7 +90,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.830001"
+                  timestampString = "561546499.815864"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "160"
@@ -105,7 +105,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.832275"
+                  timestampString = "561546499.818084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -138,7 +138,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.836081"
+                  timestampString = "561546499.821012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
@@ -153,7 +153,7 @@
                   moduleName = "AlamofireObjectMapper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tonymu/Dev/Projects/TMCategory/Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift"
-                  timestampString = "561541910.8386379"
+                  timestampString = "561546499.825841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "140"
@@ -161,6 +161,22 @@
                   offsetFromSymbolStart = "140">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMCategory/Classes/HttpClients/Router.swift"
+            timestampString = "561546499.275813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "asURLRequest()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

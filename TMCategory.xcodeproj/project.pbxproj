@@ -36,6 +36,8 @@
 		024CA31521781250000DE81B /* CategoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31421781250000DE81B /* CategoryClient.swift */; };
 		024CA31721781B58000DE81B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31621781B58000DE81B /* BaseClient.swift */; };
 		028CFA6121786BEF00BFDB6F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 028CFA6021786BEF00BFDB6F /* fontawesome-webfont.ttf */; };
+		02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6B19D21787E0D005AB13E /* ApiConfig.swift */; };
+		02B6B1A021787FF9005AB13E /* SandBoxApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */; };
 		08A9E72E2B84D333D2C574F0 /* Pods_TMCategoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8B1E64B237C0B9E30BB02C /* Pods_TMCategoryTests.framework */; };
 		CB90E34ED4199B6708242F87 /* Pods_TMCategoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FDD760301F6AF580FDE847 /* Pods_TMCategoryUITests.framework */; };
 		E903546321F63D6635D76614 /* Pods_TMCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED82086B85C982B9F06E9813 /* Pods_TMCategory.framework */; };
@@ -95,6 +97,8 @@
 		024CA31421781250000DE81B /* CategoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryClient.swift; sourceTree = "<group>"; };
 		024CA31621781B58000DE81B /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
 		028CFA6021786BEF00BFDB6F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		02B6B19D21787E0D005AB13E /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxApiConfig.swift; sourceTree = "<group>"; };
 		03885F6251D3A757C9489BCF /* Pods-TMCategoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMCategoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMCategoryTests/Pods-TMCategoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E8B1E64B237C0B9E30BB02C /* Pods_TMCategoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMCategoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDD760301F6AF580FDE847 /* Pods_TMCategoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMCategoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,7 @@
 		020380FF217710D300891103 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02B6B19C21787DE3005AB13E /* Configurations */,
 				024CA31121780DD8000DE81B /* HttpClients */,
 				020381282177391400891103 /* Models */,
 				0203810A2177212A00891103 /* ViewModels */,
@@ -278,6 +283,15 @@
 				024CA31621781B58000DE81B /* BaseClient.swift */,
 			);
 			path = HttpClients;
+			sourceTree = "<group>";
+		};
+		02B6B19C21787DE3005AB13E /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				02B6B19D21787E0D005AB13E /* ApiConfig.swift */,
+				02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		7D0E16AA67F4EAFF7173A6D6 /* Pods */ = {
@@ -536,11 +550,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B6B1A021787FF9005AB13E /* SandBoxApiConfig.swift in Sources */,
 				020380D42176FE3C00891103 /* RootViewController.swift in Sources */,
 				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
 				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
 				024CA31721781B58000DE81B /* BaseClient.swift in Sources */,
+				02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */,
 				024CA31521781250000DE81B /* CategoryClient.swift in Sources */,
 				024CA31321780E3F000DE81B /* Router.swift in Sources */,
 				02038127217736AE00891103 /* ItemsViewController.swift in Sources */,
