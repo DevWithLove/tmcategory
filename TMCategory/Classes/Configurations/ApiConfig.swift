@@ -9,10 +9,16 @@
 import UIKit
 
 protocol ApiConfig {
-  var base_uri: String {get}
-  var version: String {get}
-  var oauth_consurmer_key: String {get}
-  var oauth_signature_method: String {get}
-  var oauth_version: String {get}
-  var oauth_signature: String {get}
+  
+  var base_uri: String { get }
+  
+  var version: String { get }
+  
+  var oauth_consurmer_key: String { get }
+  
+  var oauth_signature_method: String { get }
+  
+  var oauth_version: String { get }
+  
+  var oauth_signature: String { get }
 }

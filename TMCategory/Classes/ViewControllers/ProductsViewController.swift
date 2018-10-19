@@ -26,9 +26,8 @@ class ProductsViewController: UIViewController {
     return tableView
     }()
   
-  var itemDataSource: [String] = []
-  
   let disposeBag = DisposeBag()
+  
   var productNetworkModel: ProductsNetworkModel!
   
   var rx_serchBarText: Observable<String> {
@@ -44,7 +43,6 @@ class ProductsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    itemDataSource = ["item1","item2","item3"]
     setupViews()
     setupRx()
   }
@@ -67,6 +65,7 @@ class ProductsViewController: UIViewController {
   
   // MARK: Rx
   private func setupRx() {
+    
     productNetworkModel = ProductsNetworkModel(keywordObservable: rx_serchBarText)
     
     productNetworkModel.fetchProducts(categoryId: category!.number!)
