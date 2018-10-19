@@ -30,8 +30,11 @@
 		020381232177287900891103 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038110217722A600891103 /* TitilliumWeb-Regular.ttf */; };
 		020381242177287C00891103 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02038111217722A700891103 /* TitilliumWeb-SemiBold.ttf */; };
 		020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */; };
-		02038127217736AE00891103 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ItemsViewController.swift */; };
+		02038127217736AE00891103 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ProductsViewController.swift */; };
 		0203812A2177393100891103 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381292177393100891103 /* Category.swift */; };
+		02341D9221792EAC00D9CB5D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9121792EAC00D9CB5D /* Product.swift */; };
+		02341D942179301500D9CB5D /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D932179301500D9CB5D /* ProductList.swift */; };
+		02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */; };
 		024CA31321780E3F000DE81B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31221780E3F000DE81B /* Router.swift */; };
 		024CA31521781250000DE81B /* CategoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31421781250000DE81B /* CategoryClient.swift */; };
 		024CA31721781B58000DE81B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31621781B58000DE81B /* BaseClient.swift */; };
@@ -91,8 +94,11 @@
 		02038117217722A700891103 /* TitilliumWeb-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Italic.ttf"; sourceTree = "<group>"; };
 		02038118217722A700891103 /* TitilliumWeb-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-BoldItalic.ttf"; sourceTree = "<group>"; };
 		020381192177242700891103 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
-		02038126217736AE00891103 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		02038126217736AE00891103 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		020381292177393100891103 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		02341D9121792EAC00D9CB5D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		02341D932179301500D9CB5D /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsNetworkModel.swift; sourceTree = "<group>"; };
 		024CA31221780E3F000DE81B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		024CA31421781250000DE81B /* CategoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryClient.swift; sourceTree = "<group>"; };
 		024CA31621781B58000DE81B /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
@@ -226,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				020380D32176FE3C00891103 /* RootViewController.swift */,
-				02038126217736AE00891103 /* ItemsViewController.swift */,
+				02038126217736AE00891103 /* ProductsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				020381292177393100891103 /* Category.swift */,
+				02341D9121792EAC00D9CB5D /* Product.swift */,
+				02341D932179301500D9CB5D /* ProductList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 				024CA31221780E3F000DE81B /* Router.swift */,
 				024CA31421781250000DE81B /* CategoryClient.swift */,
 				024CA31621781B58000DE81B /* BaseClient.swift */,
+				02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */,
 			);
 			path = HttpClients;
 			sourceTree = "<group>";
@@ -554,15 +563,18 @@
 				020380D42176FE3C00891103 /* RootViewController.swift in Sources */,
 				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
 				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
+				02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
 				024CA31721781B58000DE81B /* BaseClient.swift in Sources */,
+				02341D942179301500D9CB5D /* ProductList.swift in Sources */,
 				02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */,
 				024CA31521781250000DE81B /* CategoryClient.swift in Sources */,
 				024CA31321780E3F000DE81B /* Router.swift in Sources */,
-				02038127217736AE00891103 /* ItemsViewController.swift in Sources */,
+				02038127217736AE00891103 /* ProductsViewController.swift in Sources */,
 				02038103217717CF00891103 /* UIViewExtensions.swift in Sources */,
 				020380D22176FE3C00891103 /* AppDelegate.swift in Sources */,
 				0203812A2177393100891103 /* Category.swift in Sources */,
+				02341D9221792EAC00D9CB5D /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

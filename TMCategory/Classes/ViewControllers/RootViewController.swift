@@ -70,8 +70,9 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let itemsViewController = ItemsViewController()
-    self.navigationController?.pushViewController(itemsViewController, animated: true)
+    let productsViewController = ProductsViewController()
+    productsViewController.category = categoryDataSource[indexPath.row]
+    self.navigationController?.pushViewController(productsViewController, animated: true)
     print("selected : \(indexPath.row)")
   }
 }
