@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				02B6B19C21787DE3005AB13E /* Configurations */,
-				024CA31121780DD8000DE81B /* HttpClients */,
+				024CA31121780DD8000DE81B /* Networking */,
 				020381282177391400891103 /* Models */,
 				0203810A2177212A00891103 /* ViewModels */,
 				0203810521771BF000891103 /* Views */,
@@ -283,7 +283,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		024CA31121780DD8000DE81B /* HttpClients */ = {
+		024CA31121780DD8000DE81B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				024CA31221780E3F000DE81B /* Router.swift */,
@@ -291,7 +291,7 @@
 				024CA31621781B58000DE81B /* BaseClient.swift */,
 				02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */,
 			);
-			path = HttpClients;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		02B6B19C21787DE3005AB13E /* Configurations */ = {

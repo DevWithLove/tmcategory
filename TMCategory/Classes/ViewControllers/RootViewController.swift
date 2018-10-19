@@ -23,8 +23,8 @@ class RootViewController: UIViewController {
   
   lazy var categoryClient: CategoryClient = CategoryClient(delegate: self)
   
-  // MARK: View Lifecycle
   
+  // MARK: View Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,7 +49,12 @@ class RootViewController: UIViewController {
   }
   
   private func setViewConstraints() {
-    _ = categoryTableView.anchor(view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+    _ = categoryTableView.anchor(view.safeAreaLayoutGuide.topAnchor,
+                                 left: view.leftAnchor,
+                                 bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                                 right: view.rightAnchor,
+                                 topConstant: 0, leftConstant: 0, bottomConstant: 0,
+                                 rightConstant: 0, widthConstant: 0, heightConstant: 0)
   }
   
   // MARK: Additional Helpers
@@ -73,7 +78,6 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
     let productsViewController = ProductsViewController()
     productsViewController.category = categoryDataSource[indexPath.row]
     self.navigationController?.pushViewController(productsViewController, animated: true)
-    print("selected : \(indexPath.row)")
   }
 }
 
@@ -89,7 +93,6 @@ extension RootViewController: CategoryRequestDelegate {
   }
   
   func requestFailed(_ client: CategoryClient, errorResponse: Error) {
-   
     // TODO: Error handle
   }
 }

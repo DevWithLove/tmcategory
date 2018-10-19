@@ -50,12 +50,14 @@ struct ProductsNetworkModel {
 fileprivate struct SearchParameters {
   let categoryId: String
   let keyword: String
-  let page: Int
+  let page: UInt
+  let rows: UInt
   
-  init(categoryId:String, keyword: String, page: Int = 1) {
+  init(categoryId:String, keyword: String, page: UInt = 1, rows: UInt = 20) {
     self.categoryId = categoryId
     self.keyword = keyword
     self.page = page
+    self.rows = rows
   }
   
   var parameters: Parameters {
@@ -63,6 +65,7 @@ fileprivate struct SearchParameters {
     parameters["category"] = categoryId
     parameters["search_string"] = keyword
     parameters["page"] = page
+    parameters["rows"] = rows
     return parameters
   }
 }
