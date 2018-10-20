@@ -15,45 +15,44 @@ import RxSwift
 
 struct ProductsNetworkModel {
   
-  private var keyWord: Observable<String>
+  private var shouldFetch: Observable<Bool>
   
-  init(keywordObservable: Observable<String>) {
-    self.keyWord = keywordObservable
+  init(shouldFetch: Observable<Bool>) {
+    self.shouldFetch = shouldFetch
   }
   
-  func fetchProducts(categoryId: String) -> Driver<[Product]> {
-    return keyWord
+  func fetchProducts(parameters: Parameters) -> Driver<ProductList?> {
+    return shouldFetch
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-      .flatMapLatest { text -> Observable<(HTTPURLResponse, String)> in
-        let search = SearchParameters(categoryId: categoryId, keyword: text)
-        return RxAlamofire.requestString(Router.searchProduct(search.parameters))
+      .flatMapLatest { _ -> Observable<(HTTPURLResponse, String)> in
+        return RxAlamofire.requestString(Router.fetchProduct(parameters))
           .debug()
           .catchError{ error in
             return Observable.never()
         }
       }
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-      .map{ (response, json) -> [Product] in
+      .map{ (response, json) -> ProductList? in
         if let productList = Mapper<ProductList>().map(JSONString: json){
-          return productList.products ?? []
+          return productList
         } else {
-          return []
+          return nil
         }
       }
-      .asDriver(onErrorJustReturn: [])
+      .asDriver(onErrorJustReturn: nil)
   }
 }
 
 
 // MARK: Search Parameters
 
-fileprivate struct SearchParameters {
+struct ProductFetchParameters {
   let categoryId: String
   let keyword: String
-  let page: UInt
-  let rows: UInt
+  let page: Int
+  let rows: Int
   
-  init(categoryId:String, keyword: String, page: UInt = 1, rows: UInt = 20) {
+  init(categoryId:String, keyword: String, page: Int = 1, rows: Int = 20) {
     self.categoryId = categoryId
     self.keyword = keyword
     self.page = page

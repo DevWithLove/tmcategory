@@ -38,10 +38,7 @@ class CategoryClient: BaseClient {
           
         case .failure(let error):
           print("Error: \(error)")
-//          let errorResponse = HttpErrorResponse(statusCode:response.statusCode,response:response.body)
-           //strongSelf.delegate?.requestFailed(strongSelf, errorResponse:errorResponse)
         }
     }
   }
-  
 }

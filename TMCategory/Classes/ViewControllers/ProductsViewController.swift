@@ -21,20 +21,25 @@ class ProductsViewController: UIViewController {
   
   lazy var itemsTableView: UITableView = { [weak self] in
     let tableView = UITableView(frame: .zero)
+    tableView.delegate = self
+    tableView.dataSource = self
     let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
     return tableView
     }()
   
   let disposeBag = DisposeBag()
-  
+
   var productNetworkModel: ProductsNetworkModel!
+  var productsViewModel: ProductsViewModel!
   
   var rx_serchBarText: Observable<String> {
     return searchBar.rx.text.orEmpty
       .throttle(0.5, scheduler: MainScheduler.instance)
       .distinctUntilChanged()
   }
+  
+  var shouldFetchMore = Variable<Bool>(false)
   
   
   // MARK: View Lifecycle
@@ -83,19 +88,52 @@ class ProductsViewController: UIViewController {
   
   private func setupRx() {
     
-    productNetworkModel = ProductsNetworkModel(keywordObservable: rx_serchBarText)
+    productsViewModel = ProductsViewModel( keywordObservable: rx_serchBarText,
+                                           category: category!)
     
-    productNetworkModel.fetchProducts(categoryId: category!.number!)
-      .drive(itemsTableView.rx.items) { (tv, i, product) in
-        let cell = tv.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: IndexPath(item: i, section: 0)) as! CategoryTableViewCell
-        cell.nameLabel.text = product.title
-        return cell
-      }
-      .disposed(by: disposeBag)
+    
+    productsViewModel.products
+      .asObservable()
+      .subscribe(onNext: { [weak self] value in
+        self?.itemsTableView.reloadData()
+      }).disposed(by: disposeBag)
+    
+//    productNetworkModel = ProductsNetworkModel(keywordObservable: rx_serchBarText)
+//
+//    productNetworkModel.fetchProducts(categoryId: category!.number!)
+//      .drive(itemsTableView.rx.items) { (tv, i, product) in
+//        let cell = tv.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: IndexPath(item: i, section: 0)) as! CategoryTableViewCell
+//        cell.nameLabel.text = product.title
+//        return cell
+//      }
+//      .disposed(by: disposeBag)
     
   }
   
   // MARK: Additional Helpers
   
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let offsetY = scrollView.contentOffset.y
+    let contentHeight = scrollView.contentSize.height
+    
+    
+    if offsetY > contentHeight - scrollView.frame.height * 4 {
+      self.productsViewModel.fatch()
+    }
+  }
 }
 
+
+extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return productsViewModel.products.value.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: indexPath) as! CategoryTableViewCell
+    cell.nameLabel.text = productsViewModel.products.value[indexPath.row].title
+    return cell
+  }
+  
+}

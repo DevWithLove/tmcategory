@@ -16,13 +16,13 @@ enum Router: Alamofire.URLRequestConvertible {
   static var apiConfig: ApiConfig = SandBoxApiConfig()
   
   case fetchCategory
-  case searchProduct(Parameters)
+  case fetchProduct(Parameters)
   
   private var method: HTTPMethod {
     switch self {
     case .fetchCategory:
       return .get
-    case .searchProduct:
+    case .fetchProduct:
       return .get
     }
   }
@@ -33,7 +33,7 @@ enum Router: Alamofire.URLRequestConvertible {
     switch self {
     case .fetchCategory:
       return "/\(Router.apiConfig.version)/Categories/0.json"
-    case .searchProduct:
+    case .fetchProduct:
       return "/\(Router.apiConfig.version)/Search/General.json"
     }
   }
@@ -46,7 +46,7 @@ enum Router: Alamofire.URLRequestConvertible {
     request.addValue(Router.apiConfig.oauthHeader, forHTTPHeaderField: Router.oauthHeaderKey)
     
     switch self {
-    case .searchProduct(let parameters):
+    case .fetchProduct(let parameters):
       return try requestWithParameter(request, parameters: parameters)
     default:
       return request

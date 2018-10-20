@@ -32,6 +32,7 @@
 		020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */; };
 		02038127217736AE00891103 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ProductsViewController.swift */; };
 		0203812A2177393100891103 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381292177393100891103 /* Category.swift */; };
+		021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A46217A7AFB0040230E /* ProductsViewModel.swift */; };
 		02341D9221792EAC00D9CB5D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9121792EAC00D9CB5D /* Product.swift */; };
 		02341D942179301500D9CB5D /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D932179301500D9CB5D /* ProductList.swift */; };
 		02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */; };
@@ -96,6 +97,7 @@
 		020381192177242700891103 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		02038126217736AE00891103 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		020381292177393100891103 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		021E5A46217A7AFB0040230E /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		02341D9121792EAC00D9CB5D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		02341D932179301500D9CB5D /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsNetworkModel.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				0203810B2177215000891103 /* CategoryViewModel.swift */,
+				021E5A46217A7AFB0040230E /* ProductsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
 				024CA31721781B58000DE81B /* BaseClient.swift in Sources */,
+				021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */,
 				02341D942179301500D9CB5D /* ProductList.swift in Sources */,
 				02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */,
 				024CA31521781250000DE81B /* CategoryClient.swift in Sources */,
