@@ -35,9 +35,8 @@ class CategoryClient: BaseClient {
         switch response.result {
         case .success:
           strongSelf.delegate?.requestSuccess(strongSelf, result: response.result.value)
-          
         case .failure(let error):
-          print("Error: \(error)")
+          strongSelf.delegate?.requestFailed(strongSelf, errorResponse: error)
         }
     }
   }

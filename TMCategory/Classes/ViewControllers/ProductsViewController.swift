@@ -23,14 +23,13 @@ class ProductsViewController: UIViewController {
     let tableView = UITableView(frame: .zero)
     tableView.delegate = self
     tableView.dataSource = self
-    let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
-    tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
+    let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: ProductTableViewCell.cellId)
     return tableView
     }()
   
   let disposeBag = DisposeBag()
 
-  var productNetworkModel: ProductsNetworkModel!
   var productsViewModel: ProductsViewModel!
   
   var rx_serchBarText: Observable<String> {
@@ -91,23 +90,12 @@ class ProductsViewController: UIViewController {
     productsViewModel = ProductsViewModel( keywordObservable: rx_serchBarText,
                                            category: category!)
     
-    
     productsViewModel.products
       .asObservable()
+      .subscribeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] value in
         self?.itemsTableView.reloadData()
       }).disposed(by: disposeBag)
-    
-//    productNetworkModel = ProductsNetworkModel(keywordObservable: rx_serchBarText)
-//
-//    productNetworkModel.fetchProducts(categoryId: category!.number!)
-//      .drive(itemsTableView.rx.items) { (tv, i, product) in
-//        let cell = tv.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: IndexPath(item: i, section: 0)) as! CategoryTableViewCell
-//        cell.nameLabel.text = product.title
-//        return cell
-//      }
-//      .disposed(by: disposeBag)
-    
   }
   
   // MARK: Additional Helpers
@@ -115,7 +103,6 @@ class ProductsViewController: UIViewController {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let offsetY = scrollView.contentOffset.y
     let contentHeight = scrollView.contentSize.height
-    
     
     if offsetY > contentHeight - scrollView.frame.height * 4 {
       self.productsViewModel.fatch()
@@ -127,13 +114,17 @@ class ProductsViewController: UIViewController {
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return productsViewModel.products.value.count
+    return productsViewModel.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: indexPath) as! CategoryTableViewCell
-    cell.nameLabel.text = productsViewModel.products.value[indexPath.row].title
+    let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.cellId, for: indexPath) as! ProductTableViewCell
+    cell.viewModel = productsViewModel.product(at: indexPath.row).toViewModel()
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return ProductTableViewCell.height
   }
   
 }

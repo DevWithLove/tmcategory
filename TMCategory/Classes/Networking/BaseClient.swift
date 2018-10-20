@@ -14,11 +14,9 @@ class BaseClient {
   var manager: SessionManager = BaseClient.defaultManager
   
   static let defaultManager: SessionManager = {
-    
     let configuration: URLSessionConfiguration = URLSessionConfiguration.default
     configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
     return SessionManager(configuration: configuration)
-    
   }()
   
 }

@@ -28,13 +28,14 @@ enum Router: Alamofire.URLRequestConvertible {
   }
   
   private var path: String {
-    //let version = Router.apiConfig.version
+    
+    let version = Router.apiConfig.version
     
     switch self {
     case .fetchCategory:
-      return "/\(Router.apiConfig.version)/Categories/0.json"
+      return "/\(version)/Categories/0.json"
     case .fetchProduct:
-      return "/\(Router.apiConfig.version)/Search/General.json"
+      return "/\(version)/Search/General.json"
     }
   }
   

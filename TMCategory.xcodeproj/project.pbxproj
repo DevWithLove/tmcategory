@@ -33,9 +33,13 @@
 		02038127217736AE00891103 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ProductsViewController.swift */; };
 		0203812A2177393100891103 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381292177393100891103 /* Category.swift */; };
 		021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A46217A7AFB0040230E /* ProductsViewModel.swift */; };
+		021E5A4B217AE3080040230E /* ProductFetchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A4A217AE3080040230E /* ProductFetchParameters.swift */; };
+		021E5A50217AF12A0040230E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A4F217AF12A0040230E /* ProductTableViewCell.swift */; };
+		021E5A52217AF20D0040230E /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021E5A51217AF20D0040230E /* ProductTableViewCell.xib */; };
+		021E5A54217AF4CC0040230E /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A53217AF4CC0040230E /* ProductCellViewModel.swift */; };
 		02341D9221792EAC00D9CB5D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9121792EAC00D9CB5D /* Product.swift */; };
 		02341D942179301500D9CB5D /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D932179301500D9CB5D /* ProductList.swift */; };
-		02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */; };
+		02341D9621793CC500D9CB5D /* ProductsRxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02341D9521793CC500D9CB5D /* ProductsRxClient.swift */; };
 		024CA31321780E3F000DE81B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31221780E3F000DE81B /* Router.swift */; };
 		024CA31521781250000DE81B /* CategoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31421781250000DE81B /* CategoryClient.swift */; };
 		024CA31721781B58000DE81B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024CA31621781B58000DE81B /* BaseClient.swift */; };
@@ -98,9 +102,13 @@
 		02038126217736AE00891103 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		020381292177393100891103 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		021E5A46217A7AFB0040230E /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		021E5A4A217AE3080040230E /* ProductFetchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFetchParameters.swift; sourceTree = "<group>"; };
+		021E5A4F217AF12A0040230E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		021E5A51217AF20D0040230E /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		021E5A53217AF4CC0040230E /* ProductCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewModel.swift; sourceTree = "<group>"; };
 		02341D9121792EAC00D9CB5D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		02341D932179301500D9CB5D /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
-		02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsNetworkModel.swift; sourceTree = "<group>"; };
+		02341D9521793CC500D9CB5D /* ProductsRxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRxClient.swift; sourceTree = "<group>"; };
 		024CA31221780E3F000DE81B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		024CA31421781250000DE81B /* CategoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryClient.swift; sourceTree = "<group>"; };
 		024CA31621781B58000DE81B /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
@@ -244,6 +252,8 @@
 			children = (
 				0203810621771CA100891103 /* CategoryTableViewCell.swift */,
 				0203810821771DA200891103 /* CategoryTableViewCell.xib */,
+				021E5A4F217AF12A0040230E /* ProductTableViewCell.swift */,
+				021E5A51217AF20D0040230E /* ProductTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +263,7 @@
 			children = (
 				0203810B2177215000891103 /* CategoryViewModel.swift */,
 				021E5A46217A7AFB0040230E /* ProductsViewModel.swift */,
+				021E5A53217AF4CC0040230E /* ProductCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 				020381292177393100891103 /* Category.swift */,
 				02341D9121792EAC00D9CB5D /* Product.swift */,
 				02341D932179301500D9CB5D /* ProductList.swift */,
+				021E5A4A217AE3080040230E /* ProductFetchParameters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,7 +304,7 @@
 				024CA31221780E3F000DE81B /* Router.swift */,
 				024CA31421781250000DE81B /* CategoryClient.swift */,
 				024CA31621781B58000DE81B /* BaseClient.swift */,
-				02341D9521793CC500D9CB5D /* ProductsNetworkModel.swift */,
+				02341D9521793CC500D9CB5D /* ProductsRxClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -441,6 +453,7 @@
 				0203811B2177286200891103 /* TitilliumWeb-Black.ttf in Resources */,
 				020380DC2176FE3D00891103 /* LaunchScreen.storyboard in Resources */,
 				020381232177287900891103 /* TitilliumWeb-Regular.ttf in Resources */,
+				021E5A52217AF20D0040230E /* ProductTableViewCell.xib in Resources */,
 				020381202177287000891103 /* TitilliumWeb-Italic.ttf in Resources */,
 				0203811E2177286A00891103 /* TitilliumWeb-ExtraLight.ttf in Resources */,
 				0203811D2177286700891103 /* TitilliumWeb-BoldItalic.ttf in Resources */,
@@ -562,11 +575,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021E5A4B217AE3080040230E /* ProductFetchParameters.swift in Sources */,
 				02B6B1A021787FF9005AB13E /* SandBoxApiConfig.swift in Sources */,
 				020380D42176FE3C00891103 /* RootViewController.swift in Sources */,
+				021E5A50217AF12A0040230E /* ProductTableViewCell.swift in Sources */,
 				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
 				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
-				02341D9621793CC500D9CB5D /* ProductsNetworkModel.swift in Sources */,
+				02341D9621793CC500D9CB5D /* ProductsRxClient.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
 				024CA31721781B58000DE81B /* BaseClient.swift in Sources */,
 				021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */,
@@ -574,6 +589,7 @@
 				02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */,
 				024CA31521781250000DE81B /* CategoryClient.swift in Sources */,
 				024CA31321780E3F000DE81B /* Router.swift in Sources */,
+				021E5A54217AF4CC0040230E /* ProductCellViewModel.swift in Sources */,
 				02038127217736AE00891103 /* ProductsViewController.swift in Sources */,
 				02038103217717CF00891103 /* UIViewExtensions.swift in Sources */,
 				020380D22176FE3C00891103 /* AppDelegate.swift in Sources */,
@@ -757,7 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QS92QDAJH6;
+				DEVELOPMENT_TEAM = 3PHP3XA64F;
 				INFOPLIST_FILE = TMCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -776,7 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QS92QDAJH6;
+				DEVELOPMENT_TEAM = 3PHP3XA64F;
 				INFOPLIST_FILE = TMCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

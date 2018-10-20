@@ -28,3 +28,17 @@ struct Product: Mappable {
   }
   
 }
+
+
+extension Product {
+  
+  func toViewModel() -> ProductCellViewModel? {
+    
+    guard let title = self.title else {
+        return nil
+    }
+    
+    return ProductCellViewModel(title: title, imageUrl: self.picHref)
+  }
+}
+

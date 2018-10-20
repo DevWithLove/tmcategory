@@ -34,6 +34,10 @@ final class ProductsViewModel {
                                  .parameters
   }
   
+  var count: Int {
+    return products.value.count
+  }
+  
   var nextPage: Int {
     return currentPage + 1
   }
@@ -41,14 +45,28 @@ final class ProductsViewModel {
   var isFirstPage: Bool {
     return currentPage == 1
   }
-  
+
   
   init(keywordObservable: Observable<String>, category: Category) {
     self.keyword = keywordObservable
     self.category = category
     setup()
   }
-
+  
+  func product(at index: Int) -> Product {
+    return self.products.value[index]
+  }
+  
+  func fatch() {
+    guard !isFetchInProgress else  { return }
+    
+    if currentCount < totalCount || currentCount == 0 {
+        shouldFetch.value = true
+    }
+  }
+  
+  // MARK: Additional Helpers
+  
   private func setup() {
     keyword.subscribe(onNext: { [weak self] value in
       self?.fetchNewKeyword(keyword: value)
@@ -56,11 +74,12 @@ final class ProductsViewModel {
     
     shouldFetch.asObservable()
       .debug()
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .flatMapLatest {[weak self] _ -> Observable<(HTTPURLResponse, String)> in
         guard let this = self else { return Observable.never()}
         // Fetching start
         this.isFetchInProgress = true
-      
+        
         return RxAlamofire.requestString(Router.fetchProduct(this.fetchParameter))
           .debug()
           .catchError{ error in
@@ -75,18 +94,8 @@ final class ProductsViewModel {
         }
         // Fetching end
         this.isFetchInProgress = false
-    }.subscribe().disposed(by: disposeBag)
+      }.subscribe().disposed(by: disposeBag)
   }
-  
-  func fatch() {
-    guard !isFetchInProgress else  { return }
-    
-    if currentCount < totalCount || currentCount == 0 {
-        shouldFetch.value = true
-    }
-  }
-  
-  // MARK: Additional Helpers
   
   private func fetchNewKeyword(keyword: String) {
     self.currentKeyword = keyword
@@ -137,15 +146,5 @@ final class ProductsViewModel {
 //      .asDriver(onErrorJustReturn: [])
 //  }
 }
-
-//extension ProductsViewModel: ProductRequestDelegate {
-//  func requestSuccess(_ client: ProductClient, result: ProductList?) {
-//
-//  }
-//
-//  func requestFailed(_ client: ProductClient, errorResponse: Error) {
-//
-//  }
-//}
 
 

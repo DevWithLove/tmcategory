@@ -13,7 +13,7 @@ import RxAlamofire
 import RxCocoa
 import RxSwift
 
-struct ProductsNetworkModel {
+struct ProductsRxClient {
   
   private var shouldFetch: Observable<Bool>
   
@@ -40,31 +40,5 @@ struct ProductsNetworkModel {
         }
       }
       .asDriver(onErrorJustReturn: nil)
-  }
-}
-
-
-// MARK: Search Parameters
-
-struct ProductFetchParameters {
-  let categoryId: String
-  let keyword: String
-  let page: Int
-  let rows: Int
-  
-  init(categoryId:String, keyword: String, page: Int = 1, rows: Int = 20) {
-    self.categoryId = categoryId
-    self.keyword = keyword
-    self.page = page
-    self.rows = rows
-  }
-  
-  var parameters: Parameters {
-    var parameters: Parameters = [:]
-    parameters["category"] = categoryId
-    parameters["search_string"] = keyword
-    parameters["page"] = page
-    parameters["rows"] = rows
-    return parameters
   }
 }
