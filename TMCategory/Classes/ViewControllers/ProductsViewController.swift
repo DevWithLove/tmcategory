@@ -120,7 +120,8 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.cellId, for: indexPath) as! ProductTableViewCell
-    cell.viewModel = productsViewModel?.product(at: indexPath.row).toViewModel()
+    let product = productsViewModel?.product(at: indexPath.row)
+    cell.viewModel = product?.toViewModel()
     return cell
   }
   

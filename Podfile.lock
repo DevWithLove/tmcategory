@@ -13,11 +13,15 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - AlamofireObjectMapper
   - ObjectMapper
   - RxAlamofire/RxCocoa
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -27,6 +31,7 @@ SPEC REPOS:
     - RxAlamofire
     - RxCocoa
     - RxSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -35,7 +40,8 @@ SPEC CHECKSUMS:
   RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: ca3c7879e4427c58979a9e969ff825a2a8888781
+PODFILE CHECKSUM: acc1d84f6e363661f6c936de8ed3a8b5c266d027
 
 COCOAPODS: 1.5.0

@@ -9,6 +9,7 @@ target 'TMCategory' do
   pod 'RxAlamofire/RxCocoa'
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
+  pod 'SDWebImage'
 
   target 'TMCategoryTests' do
     inherit! :search_paths

@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductTableViewCell: UITableViewCell {
   
   static let cellId = String(describing: type(of: ProductTableViewCell.self))
   static let height: CGFloat = 280.0
-  static let imageCache = NSCache<NSString, UIImage>()
   
   @IBOutlet weak var picImageView: UIImageView!
   @IBOutlet weak var titleLabelView: UILabel!
@@ -22,7 +22,7 @@ class ProductTableViewCell: UITableViewCell {
       guard let this = viewModel else { return }
       self.titleLabelView.text = this.title
       if let imageUrl = this.imageUrl {
-        loadImageFromUrl(urlString: imageUrl)
+       self.picImageView.sd_setImage(with: URL(string: imageUrl))
       }
     }
   }
@@ -47,35 +47,5 @@ class ProductTableViewCell: UITableViewCell {
     self.titleLabelView.lineBreakMode = .byWordWrapping
     self.titleLabelView.numberOfLines = 0
     self.picImageView.contentMode = .center
-  }
-  
-  private func loadImageFromUrl(urlString: String) {
-    
-    self.picImageView.image = nil
-
-    let urlKey = urlString as NSString
-    
-    if let cachedItem = ProductTableViewCell.imageCache.object(forKey: urlKey) {
-      return self.picImageView.image = cachedItem
-    }
-    
-    guard let url = URL(string: urlString) else {
-      return
-    }
-    
-    URLSession.shared.dataTask(with: url, completionHandler: {[weak self] (data, response, error) in
-      
-      if error != nil {
-        return
-      }
-      
-      DispatchQueue.main.async {
-        if let image = UIImage(data: data!) {
-          ProductTableViewCell.imageCache.setObject(image, forKey: urlKey)
-          self?.picImageView.image = image
-        }
-      }
-      
-    }).resume()
   }
 }
