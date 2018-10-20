@@ -32,6 +32,7 @@
 		020381252177287E00891103 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0203810F217722A600891103 /* TitilliumWeb-SemiBoldItalic.ttf */; };
 		02038127217736AE00891103 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02038126217736AE00891103 /* ProductsViewController.swift */; };
 		0203812A2177393100891103 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020381292177393100891103 /* Category.swift */; };
+		02187C2E217B288F001056F1 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02187C2D217B288F001056F1 /* UIViewControllerExtensions.swift */; };
 		021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A46217A7AFB0040230E /* ProductsViewModel.swift */; };
 		021E5A4B217AE3080040230E /* ProductFetchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A4A217AE3080040230E /* ProductFetchParameters.swift */; };
 		021E5A50217AF12A0040230E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E5A4F217AF12A0040230E /* ProductTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		020381192177242700891103 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		02038126217736AE00891103 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		020381292177393100891103 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		02187C2D217B288F001056F1 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		021E5A46217A7AFB0040230E /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		021E5A4A217AE3080040230E /* ProductFetchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFetchParameters.swift; sourceTree = "<group>"; };
 		021E5A4F217AF12A0040230E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				02038102217717CF00891103 /* UIViewExtensions.swift */,
 				020381192177242700891103 /* UIFontExtensions.swift */,
+				02187C2D217B288F001056F1 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				02341D942179301500D9CB5D /* ProductList.swift in Sources */,
 				02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */,
 				024CA31521781250000DE81B /* CategoryClient.swift in Sources */,
+				02187C2E217B288F001056F1 /* UIViewControllerExtensions.swift in Sources */,
 				024CA31321780E3F000DE81B /* Router.swift in Sources */,
 				021E5A54217AF4CC0040230E /* ProductCellViewModel.swift in Sources */,
 				02038127217736AE00891103 /* ProductsViewController.swift in Sources */,

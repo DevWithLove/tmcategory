@@ -18,6 +18,12 @@ class RootViewController: UIViewController {
     tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
     return tableView
   }()
+  
+  lazy var indicatorView: UIActivityIndicatorView = { [weak self] in
+    let indicator = UIActivityIndicatorView(frame: self?.view.frame ?? .zero)
+    indicator.color = UIColor.gray
+    return indicator
+  }()
  
   var categoryDataSource: [Category] = []
   
@@ -28,13 +34,9 @@ class RootViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    indicatorView.startAnimating()
     categoryClient.fetch()
     setupViews()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  
   }
 
   
@@ -45,6 +47,7 @@ class RootViewController: UIViewController {
     self.title = "Category"
     view.backgroundColor = UIColor.white
     view.addSubview(categoryTableView)
+    view.addSubview(indicatorView)
     setViewConstraints()
   }
   
@@ -90,9 +93,11 @@ extension RootViewController: CategoryRequestDelegate {
       categoryDataSource = []
     }
     categoryTableView.reloadData()
+    indicatorView.stopAnimating()
   }
   
   func requestFailed(_ client: CategoryClient, errorResponse: Error) {
-    // TODO: Error handle
+    // TODO: Error handling
+    indicatorView.stopAnimating()
   }
 }

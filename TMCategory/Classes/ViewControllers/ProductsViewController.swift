@@ -30,7 +30,7 @@ class ProductsViewController: UIViewController {
   
   let disposeBag = DisposeBag()
 
-  var productsViewModel: ProductsViewModel!
+  var productsViewModel: ProductsViewModel?
   
   var rx_serchBarText: Observable<String> {
     return searchBar.rx.text.orEmpty
@@ -38,11 +38,8 @@ class ProductsViewController: UIViewController {
       .distinctUntilChanged()
   }
   
-  var shouldFetchMore = Variable<Bool>(false)
-  
   
   // MARK: View Lifecycle
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,11 +47,11 @@ class ProductsViewController: UIViewController {
     setupRx()
   }
   
-  
   // MARK: Layout
   
   private func setupViews(){
     setTitle()
+    hideKeyboardWhenTappedAround()
     view.backgroundColor = UIColor.white
     view.addSubview(searchBar)
     view.addSubview(itemsTableView)
@@ -87,10 +84,14 @@ class ProductsViewController: UIViewController {
   
   private func setupRx() {
     
-    productsViewModel = ProductsViewModel( keywordObservable: rx_serchBarText,
-                                           category: category!)
+    guard let category = self.category else {
+      return
+    }
     
-    productsViewModel.products
+    productsViewModel = ProductsViewModel( keywordObservable: rx_serchBarText,
+                                           category: category)
+    
+    productsViewModel?.products
       .asObservable()
       .subscribeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] value in
@@ -105,7 +106,7 @@ class ProductsViewController: UIViewController {
     let contentHeight = scrollView.contentSize.height
     
     if offsetY > contentHeight - scrollView.frame.height * 4 {
-      self.productsViewModel.fatch()
+      self.productsViewModel?.fatch()
     }
   }
 }
@@ -114,12 +115,12 @@ class ProductsViewController: UIViewController {
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return productsViewModel.count
+    return productsViewModel?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.cellId, for: indexPath) as! ProductTableViewCell
-    cell.viewModel = productsViewModel.product(at: indexPath.row).toViewModel()
+    cell.viewModel = productsViewModel?.product(at: indexPath.row).toViewModel()
     return cell
   }
   
