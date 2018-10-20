@@ -31,10 +31,10 @@ enum CategoryType: String {
   
   var icon: String {
     switch self {
-      case .motors: return "\u{f063}"
+      case .motors: return "\u{f1b9}"
       case .property: return "\u{f015}"
     default:
-      return "\u{f063}"
+      return "\u{f0a1}"
     }
   }
   

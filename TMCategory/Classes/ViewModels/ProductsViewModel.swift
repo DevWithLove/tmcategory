@@ -22,8 +22,9 @@ final class ProductsViewModel {
   private var keyword: Observable<String>
   private var category: Category
   private var currentKeyword: String = ""
-  private var isFetchInProgress = false
-  private var shouldFetch = Variable<Bool>(false)
+  
+  private var productClient: ProductsRxClient!
+  private var fetchParameterSubject = Variable<Parameters>([:])
   
   var products = Variable<[Product]>([])
   
@@ -50,6 +51,7 @@ final class ProductsViewModel {
   init(keywordObservable: Observable<String>, category: Category) {
     self.keyword = keywordObservable
     self.category = category
+    self.productClient = ProductsRxClient(parameter: self.fetchParameterSubject.asObservable())
     setup()
   }
   
@@ -58,10 +60,8 @@ final class ProductsViewModel {
   }
   
   func fatch() {
-    guard !isFetchInProgress else  { return }
-    
     if currentCount < totalCount || currentCount == 0 {
-        shouldFetch.value = true
+      fetchParameterSubject.value = fetchParameter
     }
   }
   
@@ -72,29 +72,14 @@ final class ProductsViewModel {
       self?.fetchNewKeyword(keyword: value)
     }).disposed(by: disposeBag)
     
-    shouldFetch.asObservable()
-      .debug()
-      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-      .flatMapLatest {[weak self] _ -> Observable<(HTTPURLResponse, String)> in
-        guard let this = self else { return Observable.never()}
-        // Fetching start
-        this.isFetchInProgress = true
-        
-        return RxAlamofire.requestString(Router.fetchProduct(this.fetchParameter))
-          .debug()
-          .catchError{ error in
-            this.isFetchInProgress = false
-            return Observable.never()
-        }
-      }
-      .map{ [weak self] response, json in
+    self.productClient
+      .rx_productList
+      .drive(onNext: { [weak self] productList in
         guard let this = self else { return }
-        if let productList = Mapper<ProductList>().map(JSONString: json) {
+        if let productList = productList {
           this.updateDataSource(productList: productList)
         }
-        // Fetching end
-        this.isFetchInProgress = false
-      }.subscribe().disposed(by: disposeBag)
+      }).disposed(by: disposeBag)
   }
   
   private func fetchNewKeyword(keyword: String) {
@@ -123,28 +108,8 @@ final class ProductsViewModel {
     }
     
     self.currentCount = self.products.value.count
+    Logger.sharedInstance.info("Products DataSource Count: \(self.count)")
   }
-  
-//  func fetch() -> Driver<[Product]>{
-//     return keyword
-//      .debug()
-//      .flatMapLatest {[weak self] text -> Observable<(HTTPURLResponse, String)> in
-//        guard let this = self else { return Observable.never() }
-//        let p = ProductFetchParameters(categoryId: this.category.number!, keyword: text, page: this.nextPage)
-//        return RxAlamofire.requestString(Router.fetchProduct(p.parameters))
-//          .debug()
-//          .catchError{ error in
-//            return Observable.never()}
-//      }
-//      .map{ response, json -> [Product] in
-//        if let productList = Mapper<ProductList>().map(JSONString: json){
-//          return productList.products ?? []
-//        } else {
-//          return []
-//        }
-//      }
-//      .asDriver(onErrorJustReturn: [])
-//  }
 }
 
 

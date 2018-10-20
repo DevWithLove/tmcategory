@@ -1,5 +1,5 @@
 //
-//  ProductsNetworkModel.swift
+//  ProductsRxClient.swift
 //  TMCategory
 //
 //  Created by Tony Mu on 19/10/18.
@@ -15,29 +15,30 @@ import RxSwift
 
 struct ProductsRxClient {
   
-  private var shouldFetch: Observable<Bool>
+  lazy var rx_productList: Driver<ProductList?> = self.fetchProducts()
+  private var parameter: Observable<Parameters>
   
-  init(shouldFetch: Observable<Bool>) {
-    self.shouldFetch = shouldFetch
+  init(parameter: Observable<Parameters>) {
+    self.parameter = parameter
   }
   
-  func fetchProducts(parameters: Parameters) -> Driver<ProductList?> {
-    return shouldFetch
+  private func fetchProducts() -> Driver<ProductList?> {
+    return parameter
+      .distinctUntilChanged({ (first, second) -> Bool in
+        return NSDictionary(dictionary: first).isEqual(to: second)
+      })
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-      .flatMapLatest { _ -> Observable<(HTTPURLResponse, String)> in
-        return RxAlamofire.requestString(Router.fetchProduct(parameters))
-          .debug()
+      .flatMapLatest { param -> Observable<(HTTPURLResponse, String)> in
+        Logger.sharedInstance.info("Fetching param: \(param)")
+        return RxAlamofire.requestString(Router.fetchProduct(param))
+          //.debug()
           .catchError{ error in
             return Observable.never()
         }
       }
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .map{ (response, json) -> ProductList? in
-        if let productList = Mapper<ProductList>().map(JSONString: json){
-          return productList
-        } else {
-          return nil
-        }
+        return Mapper<ProductList>().map(JSONString: json)
       }
       .asDriver(onErrorJustReturn: nil)
   }

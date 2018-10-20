@@ -47,6 +47,9 @@
 		028CFA6121786BEF00BFDB6F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 028CFA6021786BEF00BFDB6F /* fontawesome-webfont.ttf */; };
 		02B6B19E21787E0D005AB13E /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6B19D21787E0D005AB13E /* ApiConfig.swift */; };
 		02B6B1A021787FF9005AB13E /* SandBoxApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */; };
+		02CF6ED4217BC0CC00B5E705 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF6ED2217BC0CC00B5E705 /* Logging.swift */; };
+		02CF6ED5217BC0CC00B5E705 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF6ED3217BC0CC00B5E705 /* Logger.swift */; };
+		02CF6ED7217BC1C800B5E705 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF6ED6217BC1C800B5E705 /* DateFormatterExtensions.swift */; };
 		08A9E72E2B84D333D2C574F0 /* Pods_TMCategoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8B1E64B237C0B9E30BB02C /* Pods_TMCategoryTests.framework */; };
 		CB90E34ED4199B6708242F87 /* Pods_TMCategoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FDD760301F6AF580FDE847 /* Pods_TMCategoryUITests.framework */; };
 		E903546321F63D6635D76614 /* Pods_TMCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED82086B85C982B9F06E9813 /* Pods_TMCategory.framework */; };
@@ -117,6 +120,9 @@
 		028CFA6021786BEF00BFDB6F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		02B6B19D21787E0D005AB13E /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxApiConfig.swift; sourceTree = "<group>"; };
+		02CF6ED2217BC0CC00B5E705 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		02CF6ED3217BC0CC00B5E705 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		02CF6ED6217BC1C800B5E705 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
 		03885F6251D3A757C9489BCF /* Pods-TMCategoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMCategoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMCategoryTests/Pods-TMCategoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E8B1E64B237C0B9E30BB02C /* Pods_TMCategoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMCategoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FDD760301F6AF580FDE847 /* Pods_TMCategoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMCategoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +216,7 @@
 		020380FF217710D300891103 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02CF6ED0217BC09600B5E705 /* Utils */,
 				02B6B19C21787DE3005AB13E /* Configurations */,
 				024CA31121780DD8000DE81B /* Networking */,
 				020381282177391400891103 /* Models */,
@@ -237,6 +244,7 @@
 				02038102217717CF00891103 /* UIViewExtensions.swift */,
 				020381192177242700891103 /* UIFontExtensions.swift */,
 				02187C2D217B288F001056F1 /* UIViewControllerExtensions.swift */,
+				02CF6ED6217BC1C800B5E705 /* DateFormatterExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +327,23 @@
 				02B6B19F21787FF9005AB13E /* SandBoxApiConfig.swift */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		02CF6ED0217BC09600B5E705 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				02CF6ED1217BC0B600B5E705 /* Logging */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		02CF6ED1217BC0B600B5E705 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				02CF6ED3217BC0CC00B5E705 /* Logger.swift */,
+				02CF6ED2217BC0CC00B5E705 /* Logging.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 		7D0E16AA67F4EAFF7173A6D6 /* Pods */ = {
@@ -583,11 +608,14 @@
 				021E5A4B217AE3080040230E /* ProductFetchParameters.swift in Sources */,
 				02B6B1A021787FF9005AB13E /* SandBoxApiConfig.swift in Sources */,
 				020380D42176FE3C00891103 /* RootViewController.swift in Sources */,
+				02CF6ED4217BC0CC00B5E705 /* Logging.swift in Sources */,
 				021E5A50217AF12A0040230E /* ProductTableViewCell.swift in Sources */,
 				0203810721771CA100891103 /* CategoryTableViewCell.swift in Sources */,
 				0203811A2177242700891103 /* UIFontExtensions.swift in Sources */,
 				02341D9621793CC500D9CB5D /* ProductsRxClient.swift in Sources */,
 				0203810C2177215000891103 /* CategoryViewModel.swift in Sources */,
+				02CF6ED5217BC0CC00B5E705 /* Logger.swift in Sources */,
+				02CF6ED7217BC1C800B5E705 /* DateFormatterExtensions.swift in Sources */,
 				024CA31721781B58000DE81B /* BaseClient.swift in Sources */,
 				021E5A47217A7AFB0040230E /* ProductsViewModel.swift in Sources */,
 				02341D942179301500D9CB5D /* ProductList.swift in Sources */,
@@ -779,7 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QS92QDAJH6;
+				DEVELOPMENT_TEAM = 3PHP3XA64F;
 				INFOPLIST_FILE = TMCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -798,7 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QS92QDAJH6;
+				DEVELOPMENT_TEAM = 3PHP3XA64F;
 				INFOPLIST_FILE = TMCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
