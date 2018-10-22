@@ -1,14 +1,15 @@
 //
-//  ViewController.swift
+//  SubCategoryViewController.swift
 //  TMCategory
 //
-//  Created by Tony Mu on 17/10/18.
+//  Created by Tony Mu on 23/10/18.
 //  Copyright © 2018 DevWithLove.com. All rights reserved.
 //
 
 import UIKit
 
-class RootViewController: UIViewController {
+class SubCategoryViewController: UIViewController {
+
 
   lazy var categoryTableView: UITableView = { [weak self] in
     let tableView = UITableView(frame: .zero)
@@ -17,37 +18,31 @@ class RootViewController: UIViewController {
     let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.cellId)
     return tableView
-  }()
+    }()
+
+
+  private var subCategoryDataSource: [Category] = []
   
-  lazy var indicatorView: UIActivityIndicatorView = { [weak self] in
-    let indicator = UIActivityIndicatorView(frame: self?.view.frame ?? .zero)
-    indicator.color = UIColor.gray
-    return indicator
-  }()
- 
-  var categoryDataSource: [Category] = []
-  
-  lazy var categoryClient: CategoryClient = CategoryClient(delegate: self)
-  
-  
-  // MARK: View Lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    indicatorView.startAnimating()
-    categoryClient.fetch()
-    setupViews()
+  var category: Category? {
+    didSet {
+      guard let subCategories = category?.subcategories else { return }
+      subCategoryDataSource = subCategories
+    }
   }
 
+  // MARK: View Lifecycle
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupViews()
+  }
   
   // MARK: Layout
   
   private func setupViews(){
-    // TODO: Localization
-    self.title = "Category"
+    setTitle()
     view.backgroundColor = UIColor.white
     view.addSubview(categoryTableView)
-    view.addSubview(indicatorView)
     setViewConstraints()
   }
   
@@ -60,44 +55,30 @@ class RootViewController: UIViewController {
                                  rightConstant: 0, widthConstant: 0, heightConstant: 0)
   }
   
-  // MARK: Additional Helpers
+  private func setTitle() {
+    if let categoryName = category?.name {
+      self.title = "For \(categoryName)"
+    }
+  }
   
 }
 
+extension SubCategoryViewController: UITableViewDelegate, UITableViewDataSource {
 
-extension RootViewController: UITableViewDelegate, UITableViewDataSource {
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return categoryDataSource.count
+    return subCategoryDataSource.count
   }
-  
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId, for: indexPath) as! CategoryTableViewCell
-    cell.viewModel = categoryDataSource[indexPath.row].toViewModel()
+    cell.viewModel = subCategoryDataSource[indexPath.row].toViewModel()
     return cell
   }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let subCategoriesViewController = SubCategoryViewController()
-    subCategoriesViewController.category = categoryDataSource[indexPath.row]
-    self.navigationController?.pushViewController(subCategoriesViewController, animated: true)
-  }
-}
 
-extension RootViewController: CategoryRequestDelegate {
-  func requestSuccess(_ client: CategoryClient, result: Category?) {
-    
-    if let categories = result?.subcategories {
-      categoryDataSource = categories
-    } else {
-      categoryDataSource = []
-    }
-    categoryTableView.reloadData()
-    indicatorView.stopAnimating()
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let productsViewController = ProductsViewController()
+    productsViewController.category = subCategoryDataSource[indexPath.row]
+    self.navigationController?.pushViewController(productsViewController, animated: true)
   }
-  
-  func requestFailed(_ client: CategoryClient, errorResponse: Error) {
-    // TODO: Error handling
-    indicatorView.stopAnimating()
-  }
+
 }

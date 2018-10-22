@@ -22,7 +22,7 @@ class ProductTableViewCell: UITableViewCell {
       guard let this = viewModel else { return }
       self.titleLabelView.text = this.title
       if let imageUrl = this.imageUrl {
-       self.picImageView.sd_setImage(with: URL(string: imageUrl))
+        self.picImageView.sd_setImage(with: URL(string: imageUrl))
       }
     }
   }
@@ -38,6 +38,11 @@ class ProductTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
+  override func prepareForReuse() {
+    self.picImageView.sd_cancelCurrentImageLoad()
+    self.picImageView.image = nil
+  }
+  
   
   // MARK: Layout
   
@@ -48,4 +53,5 @@ class ProductTableViewCell: UITableViewCell {
     self.titleLabelView.numberOfLines = 0
     self.picImageView.contentMode = .center
   }
+  
 }
